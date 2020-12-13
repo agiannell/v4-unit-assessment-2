@@ -241,7 +241,9 @@ const fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake'])
     NAME will come from that context, so you should reference 'this.name' to get the correct name.
 */
 
-bark = () => `${this.name} says bark!`
+function bark(){
+    return `${this.name} says bark!`
+  }
 
 
 /*
@@ -260,7 +262,7 @@ const fidoSpeak = bark.call(fido);
     Tricks will come from that context, so you should reference 'this.tricks' to access the correct array.
 */
 
-teachTrick = trick => {
+function teachTrick(trick){
     this.tricks.push(trick);
     return this.tricks;
 }
@@ -282,7 +284,10 @@ const teachStay = teachTrick.bind(fido, 'stay');
     Remember to use the 'this' keyword to access values from the context that you will apply.
 */
 
-dogIntro = (treat, toy) => `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}!`;
+function dogIntro(treat, toy){
+    return `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}!`;
+}
+    
 
 
 /*
@@ -291,7 +296,7 @@ dogIntro = (treat, toy) => `${this.name} is a ${this.breed} that loves ${treat} 
     and save the result to a variable called fidoIntro.
 */
 
-const fidoIntro = dogIntro.apply(fido, [treat, toy]);
+const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']);
   
 
 ////////////////////PROBLEM 15////////////////////
@@ -325,7 +330,7 @@ function Phone(brand, model, storage, color, sold){
   
   let phone2 = new Phone('Apple', 'iPhone 12 mini', 64, 'Silver', false)
   
-  let phone3 = new Phone('Samsung', 'Galaxy S3', 128, 'Black', false)
+  let phone3 = new Phone('Samsung', 'Galaxy S20', 128, 'Black', false)
   
 /*
     Last, add a prototype method to Phone.
