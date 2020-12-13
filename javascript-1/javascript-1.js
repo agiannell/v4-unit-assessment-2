@@ -342,7 +342,7 @@ function Phone(brand, model, storage, color, sold){
 
 Phone.prototype.sell = function(){
     this.sold = true;
-    return `${this.brand} ${this.model} has been sold`
+    return `${this.brand} ${this.model} has been sold.`
 }
 
   
