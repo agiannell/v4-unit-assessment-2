@@ -135,7 +135,7 @@ const shippingInfo = {
   that combines the contactInfo and shippingInfo objects.
 */
 
-//CODE HERE
+const helensInfo = Object.assign(contactInfo, shippingInfo);
 
 ////////////////////PROBLEM 6////////////////////
 /*
@@ -144,14 +144,16 @@ const shippingInfo = {
   Overwrite the name property to 'Ellen' and the email address to 'ellen@email.com'.
 */
 
-//CODE HERE
+const ellensInfo = {...helensInfo};
+ellensInfo.name = 'Ellen'
+ellensInfo.email = 'ellen@email.com'
 
 ////////////////////PROBLEM 7////////////////////
 /* 
   Save Ellen's email to a new variable using destructuring.
 */
 
-//CODE HERE
+const {email} = ellensInfo;
 
 ////////////////////PROBLEM 8////////////////////
 /*
@@ -159,7 +161,7 @@ const shippingInfo = {
   from shippingInfo to new variables using destructuring.
 */
 
-//CODE HERE
+const {zipCode, state} = shippingInfo;
 
 //////////////////////////////////PROBLEMS 9-11//////////////////////////////////
 /*
@@ -221,7 +223,7 @@ const userInfo = {
   using dot notation.
 */
 
-//CODE HERE
+let shouldAlert = userInfo.settings.alerts;
 
 ////////////////////PROBLEM 10////////////////////
 /*
@@ -229,7 +231,7 @@ const userInfo = {
   using dot and/or bracket notation.
 */
 
-//CODE HERE
+let topic = userInfo.topics[3];
 
 ////////////////////PROBLEM 11////////////////////
 /*
@@ -237,7 +239,7 @@ const userInfo = {
   gn@rly_c0der_007's 2nd comment using dot/bracket notation.
 */
 
-//CODE HERE
+const commenterId = userInfo.comments[1].responses[0].userId;
 
 ////////////////////PROBLEM 12////////////////////
 /*
@@ -256,7 +258,31 @@ const userInfo = {
       - create at least 2 kid objects
 */
 
-//CODE HERE
+const person = {
+  name: 'Anthony',
+  age: 33,
+  jobs: ['designer', 'worship leader', 'developer'],
+  birthday: function(){
+    return this.age += 1;
+  },
+  favorites: {
+    color: 'green',
+    number: 42,
+    book: 'Harry Potter'
+  },
+  kids: [{
+    name: 'Jeremiah',
+    age: 6,
+  }, 
+  {
+    name: 'Charlie',
+    age: 5,
+  }, 
+  {
+    name: 'Jackson',
+    age: 3,
+  }]
+}
 
 //////////////////////////////////PROBLEMS 13-14//////////////////////////////////
 /*
@@ -282,7 +308,7 @@ const workout = {
 //let context1 = myFunc
 //let context1 = window
 //let context1 = global
-// let context1 = workout
+let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -295,6 +321,6 @@ function myFunc() {
 }
 
 //let context2 = myFunc
-// let context2 = window
-//let context2 = global
+let context2 = window
+// let context2 = global
 //let context2 = workout
