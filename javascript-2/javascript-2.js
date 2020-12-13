@@ -35,7 +35,7 @@ let foods = [
   and then adding the results together. 
 */
 
-//CODE HERE
+foods.forEach((e, i) => foods[i].calories = (foods[i].carbs * 4) + (foods[i].protein * 4) + (foods[i].fat * 9))
 
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
@@ -80,7 +80,10 @@ const products = [
   Save the copy to a new variable called 'saleProducts'.
 */
 
-//CODE HERE
+const saleProducts = products.map((e, i) => {
+  products[i].price = products[i].price - (products[i].price * .25)
+  return products[i]
+})
 
 ////////////////////PROBLEM 3////////////////////
 /*
@@ -90,7 +93,10 @@ const products = [
   (Hint: look up the array method 'includes' on MDN)
 */
 
-//CODE HERE
+const blueProducts = saleProducts.filter((e, i) => {
+  if (saleProducts[i].color.includes('blue'))
+  return saleProducts[i];
+})
 
 ////////////////////PROBLEM 4////////////////////
 /*
@@ -99,7 +105,7 @@ const products = [
   Save the result to a variable called orderTotal.
 */
 
-//CODE HERE
+const orderTotal = blueProducts.reduce((acc, curr) => acc += curr.price, 0)
 
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
